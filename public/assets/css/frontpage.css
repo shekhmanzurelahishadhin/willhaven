@@ -1,0 +1,107 @@
+.nav-section{
+    background-color: #F8F9FA;
+    padding-bottom: 10px;
+}
+.sub-nav .nav-link{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+.nav-item{
+    margin-top:5px;
+}
+.sub-nav .nav-link:hover{
+    color: #00A4E8;
+ }
+.carousel-item{
+    height: 500px;
+}
+.carousel-item img{
+    height: 100%;
+}
+.active-nav {
+
+    border-bottom: 2px solid #00A4E8;;
+}
+.market-place-section .card{
+    border: 1px solid #00A4E8;
+}
+.market-place-section .card p{
+    background: #00A4E8;
+    color: white;
+    padding: 10px;
+}
+.market-place-section .card h5{
+    color: #00A4E8;
+    padding: 10px;
+    text-align: center;
+}
+.brand-section a{
+    text-decoration: none;
+    border: 1px solid #00A4E8;
+    color: #00A4E8;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-right: 8px;
+    transition: 0.5s;
+}
+.brand-section a:hover{
+    background: #00A4E8;
+    color: white;
+}
+.category-section img{
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #00A4E8;
+}
+.category-section a:hover h5{
+    color: #00A4E8;
+}
+.product-card{
+    border: 1px solid #00A4E8;
+}
+.product-card .card-body{
+    background: #00A4E8;
+    color: white;
+}
+footer ul li{
+    list-style: none;
+    margin: 10px 0px;
+
+}
+footer ul{
+    padding-left: 0px;
+}
+footer ul a{
+    text-decoration: none;
+    color: black;
+}
+footer{
+    margin: 40px 0px;
+}
+footer h6{
+    margin: 20px 0px;
+}
+/*.social-link p{*/
+/*    margin-left: 30px;*/
+/*}*/
+.social-icon svg{
+    margin-left: 30px;
+}
+.data-btn{
+    border: none;
+    background: none;
+    color: #9B8893;
+
+}
+.data-btn:hover{
+    color: #0167F3;
+}
+.active_link{
+    color: green !important;
+    font-weight: 700;
+}
+.ad-front-section a{
+    color: #9B8893;
+}

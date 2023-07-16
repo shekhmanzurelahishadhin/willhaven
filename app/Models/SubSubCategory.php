@@ -18,4 +18,13 @@ class SubSubCategory extends Model
         self::$sub_sub_category->sub_sub_category_name = $request->sub_sub_category_name;
         self::$sub_sub_category->save();
     }
+
+    public static function updateSubSubCategory($request)
+    {
+        self::$sub_sub_category = SubSubCategory::find($request->id);
+        self::$sub_sub_category->category_id = $request->category_id;
+        self::$sub_sub_category->sub_category_id = $request->sub_category_id;
+        self::$sub_sub_category->sub_sub_category_name = $request->sub_sub_category_name;
+        self::$sub_sub_category->save();
+    }
 }

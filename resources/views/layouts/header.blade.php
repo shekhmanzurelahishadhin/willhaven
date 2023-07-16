@@ -11,35 +11,74 @@
                 <i class="fa fa-fw fa-ellipsis-v"></i>
             </button>
         </div>
-        <div class="d-flex align-items-center">
-            <div class="dropdown d-inline-block ml-2">
-                <button type="button" class="btn btn-sm btn-dual d-flex align-items-center"
-                    id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle" src="{{asset('backend/assets/media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 21px;">
-                    <span class="d-none d-sm-inline-block ml-2">{{ Auth::user()->name }}</span>
-                    <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
-                    aria-labelledby="page-header-user-dropdown">
-                    <div class="p-3 text-center bg-primary-dark rounded-top">
-                        <p class="mt-2 mb-0 text-white font-w500">{{ Auth::user()->name }}</p>
-                    </div>
-                    <div class="p-2">
-                    <!-- <a class="dropdown-item d-flex align-items-center justify-content-between"
+        @foreach($languages as $language)
+            @if($language->status==1)
+                @if($language->language=='en')
+                    <div class="d-flex align-items-center">
+                        <a href="{{route('admin.home')}}">Home</a>
+                        <div class="dropdown d-inline-block ml-2">
+                            <button type="button" class="btn btn-sm btn-dual d-flex align-items-center"
+                                    id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{--                    <img class="rounded-circle" src="{{asset('backend/assets/media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 21px;">--}}
+                                <span class="d-none d-sm-inline-block ml-2">{{ Auth::user()->name }}</span>
+                                <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
+                                 aria-labelledby="page-header-user-dropdown">
+                                <div class="p-3 text-center bg-primary-dark rounded-top">
+                                    <p class="mt-2 mb-0 text-white font-w500">{{ Auth::user()->name }}</p>
+                                </div>
+                                <div class="p-2">
+                                <!-- <a class="dropdown-item d-flex align-items-center justify-content-between"
 {{--                            href="{{ route('profile.show') }}">--}} //new comment
                             <span class="font-size-sm font-w500">Profile</span>
                             <span class="badge badge-pill badge-primary ml-2"></span>
                         </a> -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                                <span class="font-size-sm font-w500">Log Out</span>
-                            </a>
-                        </form>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                            <span class="font-size-sm font-w500">Log Out</span>
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                @elseif($language->language=='gr')
+                    <div class="d-flex align-items-center">
+                        <a href="{{route('admin.home')}}">Heim</a>
+                        <div class="dropdown d-inline-block ml-2">
+                            <button type="button" class="btn btn-sm btn-dual d-flex align-items-center"
+                                    id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{--                    <img class="rounded-circle" src="{{asset('backend/assets/media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 21px;">--}}
+                                <span class="d-none d-sm-inline-block ml-2">{{ Auth::user()->name }}</span>
+                                <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
+                                 aria-labelledby="page-header-user-dropdown">
+                                <div class="p-3 text-center bg-primary-dark rounded-top">
+                                    <p class="mt-2 mb-0 text-white font-w500">{{ Auth::user()->name }}</p>
+                                </div>
+                                <div class="p-2">
+                                <!-- <a class="dropdown-item d-flex align-items-center justify-content-between"
+{{--                            href="{{ route('profile.show') }}">--}} //new comment
+                            <span class="font-size-sm font-w500">Profile</span>
+                            <span class="badge badge-pill badge-primary ml-2"></span>
+                        </a> -->
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                            <span class="font-size-sm font-w500">Log Out</span>
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endif
+        @endforeach
+
     </div>
 
     <div id="page-header-loader" class="overlay-header bg-white">
